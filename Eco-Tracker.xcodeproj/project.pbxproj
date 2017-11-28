@@ -14,6 +14,7 @@
 		847F423F1FCD208700565E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847F423D1FCD208700565E0D /* LaunchScreen.storyboard */; };
 		847F424A1FCD208700565E0D /* Eco_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F42491FCD208700565E0D /* Eco_TrackerTests.swift */; };
 		847F42551FCD208700565E0D /* Eco_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F42541FCD208700565E0D /* Eco_TrackerUITests.swift */; };
+		847F42661FCD2B9500565E0D /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F42651FCD2B9500565E0D /* RecycleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		847F42501FCD208700565E0D /* Eco-TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eco-TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847F42541FCD208700565E0D /* Eco_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eco_TrackerUITests.swift; sourceTree = "<group>"; };
 		847F42561FCD208700565E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847F42651FCD2B9500565E0D /* RecycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		847F42331FCD208600565E0D /* Eco-Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				847F42651FCD2B9500565E0D /* RecycleViewController.swift */,
 				847F42341FCD208600565E0D /* AppDelegate.swift */,
 				847F42361FCD208600565E0D /* ViewController.swift */,
 				847F42381FCD208600565E0D /* Main.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847F42661FCD2B9500565E0D /* RecycleViewController.swift in Sources */,
 				847F42371FCD208600565E0D /* ViewController.swift in Sources */,
 				847F42351FCD208600565E0D /* AppDelegate.swift in Sources */,
 			);
