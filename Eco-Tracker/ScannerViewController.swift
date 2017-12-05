@@ -39,13 +39,13 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.ean13]
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.upce]
         
         video = AVCaptureVideoPreviewLayer(session: session)
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
        //self.view.bringSubview(toFront: square)
-        self.view.bringSubview(toFront: square)
+        //self.view.bringSubview(toFront: square)
         session.startRunning()
         
         
@@ -60,7 +60,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
             {
-                if object.type == AVMetadataObject.ObjectType.ean13
+                if (object.type == AVMetadataObject.ObjectType.ean13)
                 {
                     let alert = UIAlertController(title: "BarCode", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
@@ -68,6 +68,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     present(alert, animated: true, completion: nil)
                     
                 }
+                
+                if (object.type == AVMetadataObject.ObjectType.upce)
+                {
+                    let alert = UIAlertController(title: "BarCode", message: object.stringValue, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: {(nil) in UIPasteboard.general.string = object.stringValue}))
+                    present(alert, animated: true, completion: nil)
+                    
+                }
+                
             }
         }
     }

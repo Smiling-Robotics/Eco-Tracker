@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -69,24 +70,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="sun"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afd-El-qAF">
-                                <rect key="frame" x="16" y="222" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.74348926540000004" green="0.12585526699999999" blue="0.20624187590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7AP-5H-OIq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="SCAN NOW">
-                                    <color key="titleColor" red="0.69648112296951958" green="0.68042839523613141" blue="0.74348926540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ofW-I6-xmn" kind="show" id="3He-q5-wyG"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ptk" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-vt-Wvv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="72"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="104"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="7Fe-fZ-2ay"/>
+                                    <constraint firstAttribute="height" constant="104" id="7Fe-fZ-2ay"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-EK-xLx">
@@ -103,6 +90,23 @@
                                 <rect key="frame" x="211" y="488" width="100" height="66"/>
                                 <state key="normal" backgroundImage="water"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rrccMtnLogo-Black" translatesAutoresizingMaskIntoConstraints="NO" id="5iJ-IX-ppT">
+                                <rect key="frame" x="0.0" y="162" width="375" height="67"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afd-El-qAF">
+                                <rect key="frame" x="16" y="244" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.74348926540000004" green="0.12585526699999999" blue="0.20624187590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7AP-5H-OIq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="SCAN NOW">
+                                    <color key="titleColor" red="0.69648112296951958" green="0.68042839523613141" blue="0.74348926540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ofW-I6-xmn" kind="show" id="3He-q5-wyG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -113,20 +117,24 @@
                             <constraint firstItem="I8O-Ze-ckb" firstAttribute="baseline" secondItem="pKl-0f-0L3" secondAttribute="baseline" id="DtW-tH-Ywu"/>
                             <constraint firstItem="I8O-Ze-ckb" firstAttribute="top" secondItem="pKl-0f-0L3" secondAttribute="top" id="E5o-ni-HhI"/>
                             <constraint firstItem="vlX-pE-1BP" firstAttribute="baseline" secondItem="ePI-c1-ev2" secondAttribute="baseline" id="IYs-iB-tGh"/>
+                            <constraint firstItem="5iJ-IX-ppT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="98" id="Idw-A9-efd"/>
                             <constraint firstItem="KBD-vt-Wvv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KW8-bZ-Wau"/>
                             <constraint firstItem="pKl-0f-0L3" firstAttribute="top" secondItem="ePI-c1-ev2" secondAttribute="bottom" constant="78" id="KzE-Ls-a4p"/>
                             <constraint firstItem="KBD-vt-Wvv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LSf-hF-5EO"/>
-                            <constraint firstItem="afd-El-qAF" firstAttribute="top" secondItem="KBD-vt-Wvv" secondAttribute="bottom" constant="86" id="M64-H8-W7n"/>
+                            <constraint firstItem="afd-El-qAF" firstAttribute="top" secondItem="KBD-vt-Wvv" secondAttribute="bottom" constant="76" id="M64-H8-W7n"/>
                             <constraint firstItem="ppV-EK-xLx" firstAttribute="leading" secondItem="ePI-c1-ev2" secondAttribute="trailing" constant="45" id="NCl-SJ-sBb"/>
                             <constraint firstItem="ePI-c1-ev2" firstAttribute="firstBaseline" secondItem="vlX-pE-1BP" secondAttribute="firstBaseline" id="NQr-bb-h8K"/>
+                            <constraint firstItem="5iJ-IX-ppT" firstAttribute="trailing" secondItem="KBD-vt-Wvv" secondAttribute="trailing" id="RJl-hz-NjB"/>
                             <constraint firstItem="ePI-c1-ev2" firstAttribute="bottom" secondItem="ppV-EK-xLx" secondAttribute="bottom" id="Thn-5Q-nSp"/>
+                            <constraint firstItem="afd-El-qAF" firstAttribute="top" secondItem="5iJ-IX-ppT" secondAttribute="bottom" constant="15" id="Xgq-Qc-i34"/>
                             <constraint firstItem="KBD-vt-Wvv" firstAttribute="centerX" secondItem="afd-El-qAF" secondAttribute="centerX" id="b5y-SK-tFw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I8O-Ze-ckb" secondAttribute="bottom" constant="113" id="cEy-MT-bQJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pKl-0f-0L3" secondAttribute="trailing" constant="64" id="dFc-it-QeL"/>
-                            <constraint firstItem="vlX-pE-1BP" firstAttribute="top" secondItem="afd-El-qAF" secondAttribute="bottom" constant="73" id="eJk-Kp-Wdk"/>
+                            <constraint firstItem="vlX-pE-1BP" firstAttribute="top" secondItem="afd-El-qAF" secondAttribute="bottom" constant="51" id="eJk-Kp-Wdk"/>
                             <constraint firstItem="pKl-0f-0L3" firstAttribute="leading" secondItem="I8O-Ze-ckb" secondAttribute="trailing" constant="57" id="eWf-iO-DWD"/>
                             <constraint firstItem="I8O-Ze-ckb" firstAttribute="top" secondItem="vlX-pE-1BP" secondAttribute="bottom" constant="73" id="euO-Ir-Rus"/>
                             <constraint firstItem="ePI-c1-ev2" firstAttribute="top" secondItem="ppV-EK-xLx" secondAttribute="top" id="f6p-Gy-PTe"/>
+                            <constraint firstItem="5iJ-IX-ppT" firstAttribute="leading" secondItem="KBD-vt-Wvv" secondAttribute="leading" id="hvz-Bc-ike"/>
                             <constraint firstItem="afd-El-qAF" firstAttribute="leading" secondItem="vlX-pE-1BP" secondAttribute="leading" id="m43-nO-0pe"/>
                             <constraint firstItem="I8O-Ze-ckb" firstAttribute="firstBaseline" secondItem="pKl-0f-0L3" secondAttribute="firstBaseline" id="syN-3R-Uue"/>
                             <constraint firstItem="vlX-pE-1BP" firstAttribute="top" secondItem="ePI-c1-ev2" secondAttribute="top" id="yJq-Lg-63Y"/>
@@ -241,6 +249,7 @@
         <image name="list" width="128" height="128"/>
         <image name="ptk" width="318" height="159"/>
         <image name="recycle" width="128" height="128"/>
+        <image name="rrccMtnLogo-Black" width="766" height="416"/>
         <image name="square" width="748" height="565"/>
         <image name="sun" width="128" height="128"/>
         <image name="water" width="113" height="128"/>
