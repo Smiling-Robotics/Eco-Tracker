@@ -197,6 +197,7 @@
                         <viewLayoutGuide key="safeArea" id="jaE-Cx-uAp"/>
                     </view>
                     <connections>
+                        <outlet property="myTableView" destination="ZjH-QC-603" id="Jap-wp-noH"/>
                         <outlet property="searchDisplayController" destination="2NG-eZ-dit" id="aAm-QH-4yx"/>
                     </connections>
                 </viewController>

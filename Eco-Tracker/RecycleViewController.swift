@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
+
+
 var pinName = ""
 class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+
+    @IBOutlet weak var myTableView: UITableView!
+    
     let list = ["Milk", "Honey", "Tomatoes"]
     var myIndex = 0
+    var products:[String] = []
+    var handle:DatabaseHandle?
+    var ref:DatabaseReference?
     
-    
+    //let databaseRef = Database.database().reference()
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(list.count)
+        return(products.count)
         
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default,  reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = products[indexPath.row]
         
         return(cell)
     }
@@ -42,7 +53,19 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       ref = Database.database().reference()
+        
+        handle = ref?.child("Products").observe(.childAdded, with: { (snapshot) in
+            
+            
+            if let item = snapshot.value as? String
+            {
+                self.products.append(item)
+                self.myTableView.reloadData()
+            }
+        })
+    
         // Do any additional setup after loading the view.
     }
 
