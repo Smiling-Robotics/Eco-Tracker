@@ -10,9 +10,13 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-
+var products:[String] = []
+var isRecycleable:[String] = []
+var How:[String] = []
+var Other:[String] = []
 
 var pinName = ""
+var myIndex = 0
 class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [User]()
@@ -20,8 +24,8 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var myTableView: UITableView!
     
     let list = ["Milk", "Honey", "Tomatoes"]
-    var myIndex = 0
-    var products:[String] = []
+    
+   // var products:[String] = []
     var handle:DatabaseHandle?
     var ref:DatabaseReference?
     
@@ -40,7 +44,10 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.cellForRow(at: indexPath)
         let text = cell?.textLabel?.text
         //print(text as Any)
-        
+        myIndex = indexPath.row
+        pinName = "Q"
+        let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
+        self.navigationController?.pushViewController(viewController!, animated: true)
         if (text == "Paper with tape")
         {
             pinName = "A"
@@ -69,7 +76,7 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
        ref = Database.database().reference()
         
         handle = ref?.child("Products").observe(.childAdded, with: { (snapshot) in
-           print (snapshot)
+           //print (snapshot)
             
             
         
@@ -78,16 +85,27 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
             {
                 let Product = User()
                 Product.Names = item["Names"] as! String
-                print (Product.Names)
+                Product.Recycleable = item["Recyclable"] as! String?
+                Product.How = item["How"] as! String?
+                Product.Other = item["Other"] as! String?
+                
+                
+               
+                //print (Product.Names)
                 //Product.setValuesForKeys(item)
                 //print(Product.Names as! String)
                 
             
-                self.products.append(Product.Names!)
+                products.append(Product.Names!)
+                isRecycleable.append(Product.Recycleable!)
+                How.append(Product.How!)
+                Other.append(Product.Other!)
+                
                 self.myTableView.reloadData()
             }
+            
         })
-    
+        
         // Do any additional setup after loading the view.
     }
 

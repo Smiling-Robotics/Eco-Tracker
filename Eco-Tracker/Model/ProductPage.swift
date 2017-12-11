@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  ProductPage.swift
 //  Eco-Tracker
 //
 //  Created by admin on 12/10/17.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class User: NSObject {
+class ProductPage: NSObject {
+
     var Names: String?
-    var Recycleable: String?
-    var How: String?
-   
-    var Other: String?
-    
+    var Barcode: String?
 }

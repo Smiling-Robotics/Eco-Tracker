@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+var ProductCodes:[String] = ["01212901","01213007","01255906","01257904","01200081131","01200002862","01222403","078000206401",
+                             "012000150098","012000013812","078000013528","04963406"]
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
@@ -62,6 +64,19 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             {
                 if (object.type == AVMetadataObject.ObjectType.ean13)
                 {
+                    for item in ProductCodes {
+                        if (item == object.stringValue)
+                        {
+                            
+                            myIndex = 17
+                            pinName = "Q"
+                            let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
+                            
+                            
+                            self.navigationController?.pushViewController(viewController!, animated: true)
+                            print("Coke")
+                        }
+                    }
                     let alert = UIAlertController(title: "BarCode", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: {(nil) in UIPasteboard.general.string = object.stringValue}))
@@ -71,13 +86,31 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 
                 if (object.type == AVMetadataObject.ObjectType.upce)
                 {
+                    for item in ProductCodes {
+                        if (item == object.stringValue)
+                        {
+                           myIndex = 17
+                            pinName = "Q"
+                            let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
+                            self.navigationController?.pushViewController(viewController!, animated: true)
+                            print("Coke")
+                        }
+                    }
                     let alert = UIAlertController(title: "BarCode", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
                     alert.addAction(UIAlertAction(title: "Copy", style: .default, handler: {(nil) in UIPasteboard.general.string = object.stringValue}))
                     present(alert, animated: true, completion: nil)
                     
                 }
-                
+               // for item in ProductCodes {
+               //     if (item == object.stringValue)
+               //     {
+               //         pinName = "B"
+                //        let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
+                //        self.navigationController?.pushViewController(viewController!, animated: true)
+                //        print("Coke")
+                  //  }
+                //}
             }
         }
     }
