@@ -14,7 +14,8 @@ import FirebaseDatabase
 
 var pinName = ""
 class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    var items = [User]()
 
     @IBOutlet weak var myTableView: UITableView!
     
@@ -36,18 +37,29 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
         return(cell)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        let text = cell?.textLabel?.text
+        //print(text as Any)
         
-        
-        myIndex = indexPath.row
-        debugPrint(myIndex)
-        if (myIndex == 2)
+        if (text == "Paper with tape")
         {
-            debugPrint("HEllo")
             pinName = "A"
             let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
-            debugPrint(pinName)
             self.navigationController?.pushViewController(viewController!, animated: true)
         }
+        
+        
+        
+        //myIndex = indexPath.row
+        //debugPrint(myIndex)
+        //if (myIndex == 2)
+       // {
+         //   debugPrint("HEllo")
+         //   pinName = "A"
+         //   let viewController = storyboard?.instantiateViewController(withIdentifier: (pinName))
+         //   debugPrint(pinName)
+         //   self.navigationController?.pushViewController(viewController!, animated: true)
+       // }
         
     }
     
@@ -57,11 +69,21 @@ class RecycleViewController: UIViewController, UITableViewDelegate, UITableViewD
        ref = Database.database().reference()
         
         handle = ref?.child("Products").observe(.childAdded, with: { (snapshot) in
+           print (snapshot)
             
             
-            if let item = snapshot.value as? String
+        
+            
+            if let item = snapshot.value as? [String: AnyObject]
             {
-                self.products.append(item)
+                let Product = User()
+                Product.Names = item["Names"] as! String
+                print (Product.Names)
+                //Product.setValuesForKeys(item)
+                //print(Product.Names as! String)
+                
+            
+                self.products.append(Product.Names!)
                 self.myTableView.reloadData()
             }
         })

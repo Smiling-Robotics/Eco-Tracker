@@ -18,6 +18,8 @@
 		847F42551FCD208700565E0D /* Eco_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F42541FCD208700565E0D /* Eco_TrackerUITests.swift */; };
 		847F42661FCD2B9500565E0D /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F42651FCD2B9500565E0D /* RecycleViewController.swift */; };
 		848AD92E1FD6F31500FEB4F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848AD92D1FD6F31500FEB4F2 /* GoogleService-Info.plist */; };
+		84A4AB571FDDC4D100F7AF22 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AB561FDDC4D100F7AF22 /* User.swift */; };
+		84A4AB591FDDD01400F7AF22 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4AB581FDDD01400F7AF22 /* ProductViewController.swift */; };
 		9569FD4A22CB81D6BF3B9E2B /* Pods_Eco_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62870BFD7AF72281964ACDF /* Pods_Eco_TrackerUITests.framework */; };
 		9AF12D02218F77B2B38D5947 /* Pods_Eco_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86A891E7186193B3D36E1E8 /* Pods_Eco_Tracker.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		847F42561FCD208700565E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847F42651FCD2B9500565E0D /* RecycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleViewController.swift; sourceTree = "<group>"; };
 		848AD92D1FD6F31500FEB4F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84A4AB561FDDC4D100F7AF22 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84A4AB581FDDD01400F7AF22 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		D62870BFD7AF72281964ACDF /* Pods_Eco_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eco_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86A891E7186193B3D36E1E8 /* Pods_Eco_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eco_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F31A027F9F9495E3875466 /* Pods-Eco-Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eco-Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eco-Tracker/Pods-Eco-Tracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,9 +134,11 @@
 		847F42331FCD208600565E0D /* Eco-Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				84A4AB551FDDC49800F7AF22 /* Model */,
 				847F42651FCD2B9500565E0D /* RecycleViewController.swift */,
 				847F42341FCD208600565E0D /* AppDelegate.swift */,
 				847F42361FCD208600565E0D /* ViewController.swift */,
+				84A4AB581FDDD01400F7AF22 /* ProductViewController.swift */,
 				847F42381FCD208600565E0D /* Main.storyboard */,
 				84129A8F1FD65F6E0071C911 /* ScannerViewController.swift */,
 				847F423B1FCD208700565E0D /* Assets.xcassets */,
@@ -159,6 +165,14 @@
 				847F42561FCD208700565E0D /* Info.plist */,
 			);
 			path = "Eco-TrackerUITests";
+			sourceTree = "<group>";
+		};
+		84A4AB551FDDC49800F7AF22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84A4AB561FDDC4D100F7AF22 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8A9C26038FBE2FB0B25010CC /* Pods */ = {
@@ -472,9 +486,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A4AB591FDDD01400F7AF22 /* ProductViewController.swift in Sources */,
 				847F42661FCD2B9500565E0D /* RecycleViewController.swift in Sources */,
 				847F42371FCD208600565E0D /* ViewController.swift in Sources */,
 				847F42351FCD208600565E0D /* AppDelegate.swift in Sources */,
+				84A4AB571FDDC4D100F7AF22 /* User.swift in Sources */,
 				84129A901FD65F6E0071C911 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
